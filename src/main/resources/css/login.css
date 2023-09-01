@@ -1,0 +1,40 @@
+.AnchorPane{
+    -fx-background: #354152;
+    -fx-border-style:solid;
+    -fx-border-color: #7e8ba3;
+
+
+}
+
+.AccountNameField {
+    -fx-background-color: #354152 , #354152 , #354152;
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+    -fx-border-style: solid;
+    -fx-border-radius:10px;
+}
+
+.AccountNameField:focused{
+       -fx-background-color: #354152 , #354152 , #354152;
+       -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+       -fx-border-style: solid;
+       -fx-border-radius:10px;
+}
+
+
+
+.PasswordField{
+    -fx-background-color: #354152 , #354152 , #354152;
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+    -fx-border-style: solid;
+    -fx-border-radius:10px;
+}
+
+.LoginButton{
+    -fx-background-color: #a6b5c9;
+    -fx-border-radius: 10px;
+}
+
+.LoginButton:hover{
+    -fx-cursor:hand;
+
+}

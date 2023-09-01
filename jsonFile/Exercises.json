@@ -1,0 +1,22 @@
+[
+    {
+        "nameOfExercise": "Shyby",
+        "calorieOfExercise": 2,
+        "difficultyOfExercise": 1
+    },
+    {
+        "nameOfExercise": "neco",
+        "calorieOfExercise": 2,
+        "difficultyOfExercise": 1
+    },
+    {
+        "nameOfExercise": "Kliky",
+        "calorieOfExercise": 5,
+        "difficultyOfExercise": 2
+    },
+    {
+        "nameOfExercise": "Běh",
+        "calorieOfExercise": 1,
+        "difficultyOfExercise": 1
+    }
+]

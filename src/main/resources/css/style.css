@@ -1,0 +1,47 @@
+.menuButton{
+    -fx-text-fill: white;
+    -fx-background-color: linear-gradient(to right, #020024, #77252f);
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 5;
+}
+
+.menuButton:hover{
+    -fx-cursor:hand;
+}
+
+}
+.searchButton {
+    -fx-background-color:
+        #a6b5c9,
+        linear-gradient(#303842 0%, #3e5577 20%, #375074 100%),
+        linear-gradient(#768aa5 0%, #849cbb 5%, #5877a2 50%, #486a9a 51%, #4a6c9b 100%);
+    -fx-background-insets: 0 0 -1 0,0,1;
+    -fx-background-radius: 5,5,4;
+    -fx-padding: 7 30 7 30;
+    -fx-text-fill: #242d35;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+}
+
+.searchButton:hover{
+    -fx-cursor:hand;
+}
+
+
+.VBox{
+    -fx-background-color: linear-gradient(to right, #020024, #77252f);
+}
+
+/*.close{
+    -fx-background-color: FF0000;
+    -fx-background-radius: 100;*/
+}
+.Circle{
+    -fx-background-color: FF5555;
+}
+
+.AnchorPane{
+ -fx-background-color: linear-gradient(to right, #c8d1d6, #866a64);
+}

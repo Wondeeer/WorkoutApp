@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="1000.0" styleClass="AnchorPane" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.testproworkoutappku.HelloController">
+   <children>
+      <VBox alignment="CENTER_RIGHT" layoutX="860.0" layoutY="20.0" prefHeight="624.0" prefWidth="150.0" styleClass="VBox" stylesheets="@../css/style.css" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#onExercise" prefHeight="50.0" prefWidth="150.0" styleClass="menuButton" stylesheets="@../css/style.css" text="Exercise">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="160.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Yu Gothic Medium" size="17.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#fullScreenButton" prefHeight="50.0" prefWidth="150.0" styleClass="menuButton" stylesheets="@../css/style.css" text="Fullscreen">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Yu Gothic Medium" size="17.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" styleClass="menuButton" stylesheets="@../css/style.css" text="Function">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Yu Gothic Medium" size="17.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="94.0" mnemonicParsing="false" onAction="#onExit" prefHeight="50.0" prefWidth="150.0" styleClass="menuButton" stylesheets="@../css/style.css" text="Exit">
+               <VBox.margin>
+                  <Insets top="200.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Segoe UI Black" size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <ToolBar fx:id="toolBar" layoutY="2.0" nodeOrientation="RIGHT_TO_LEFT" onMouseDragged="#onMouseDragged" onMousePressed="#onMousePressed" prefHeight="25.0" prefWidth="1000.0" stylesheets="@../css/style.css" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+         <items>
+            <Circle fill="#ff2b1f" onMouseClicked="#onExit" opacity="0.68" radius="6.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" styleClass="Circle" />
+            <Circle fill="#ffa421" onMouseClicked="#fullScreen" opacity="0.68" radius="6.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" styleClass="Circle" />
+            <Circle fill="#2d973c" onMouseClicked="#minimalizeScreen" opacity="0.68" radius="6.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" styleClass="Circle" />
+         </items>
+      </ToolBar>
+      <TableView fx:id="tableView" editable="true" layoutX="13.0" layoutY="28.0" prefHeight="567.0" prefWidth="309.0">
+        <columns>
+          <TableColumn fx:id="tableExercise" prefWidth="107.0" text="Exercise" />
+          <TableColumn fx:id="tableCalories" prefWidth="97.0" text="Calories" />
+           <TableColumn fx:id="tableDifficulty" prefWidth="102.0" text="Difficulty" />
+        </columns>
+      </TableView>
+      <TextField fx:id="textFieldDifficulty" alignment="CENTER" layoutX="451.0" layoutY="68.0" onKeyPressed="#onKeyTypedTFDifficulty" prefHeight="17.0" prefWidth="87.0" visible="false" />
+      <TextField fx:id="textFieldExercise" layoutX="451.0" layoutY="93.0" onKeyPressed="#onKeyTypedTFExercise" prefHeight="17.0" prefWidth="87.0" visible="false" />
+      <TextField fx:id="textFieldCalories" layoutX="451.0" layoutY="117.0" onKeyPressed="#onKeyTypedTFCalories" prefHeight="17.0" prefWidth="87.0" visible="false" />
+      <CheckBox fx:id="checkBoxDifficulty" layoutX="333.0" layoutY="119.0" mnemonicParsing="false" onAction="#onCheckBoxDifficulty" prefHeight="17.0" prefWidth="87.0" text="Difficulty" />
+      <CheckBox fx:id="checkBoxCalories" layoutX="333.0" layoutY="94.0" mnemonicParsing="false" onAction="#onCheckBoxCalories" prefHeight="17.0" prefWidth="87.0" text="Calories" />
+      <CheckBox fx:id="checkBoxExercise" layoutX="333.0" layoutY="69.0" mnemonicParsing="false" onAction="#onCheckBoxExercise" prefHeight="17.0" prefWidth="87.0" text="Exercise" />
+      <Button fx:id="searchButton" layoutX="333.0" layoutY="28.0" mnemonicParsing="false" onAction="#onSearchButton" prefHeight="26.0" prefWidth="106.0" styleClass="searchButton" stylesheets="@../css/style.css" text="Search" />
+   </children>
+</AnchorPane>
