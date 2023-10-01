@@ -1,27 +1,41 @@
 package com.example.testproworkoutappku;
 
+import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.util.Duration;
+
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ResourceBundle;
 
-public class LoginController {
+
+public class LoginController implements Initializable {
 
     @FXML
     private TextField usernameField;
+    @FXML
+    private Label labelLoginFail;
+    @FXML
+    private Button buttonLogin;
 
     @FXML
     private PasswordField passwordField;
 
-    private Stage stage;
 
     @FXML
     private void handleLogin() {
@@ -32,7 +46,7 @@ public class LoginController {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(
                     //-------------Here is database name, root is username and password-------------
-                    "jdbc:mysql://*************", "******", "*****************");
+                    "jdbc:mysql://38.242.247.11:3306/fitness", "fitness", "XND3jjJshZMhfeKr");
 
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("select * from users");
@@ -43,15 +57,12 @@ public class LoginController {
                     // ----------------------Load new Scene-------------------------
                     try {
                         FXMLLoader fxmlLoader = new FXMLLoader(WorkOutApplication.class.getResource("/FXML/PrimaryWindow.fxml"));
-                        Scene scene = new Scene(fxmlLoader.load());
-
+                        Parent root1 = (Parent) fxmlLoader.load();
                         HelloController controller = fxmlLoader.getController();
-                        controller.setStage(stage);
-
-
                         Stage stage = new Stage();
-                        stage.setTitle("Domů");
-                        stage.setScene(scene);
+                        controller.setStage(stage);
+                        stage.initStyle(StageStyle.TRANSPARENT);
+                        stage.setScene(new Scene(root1));
                         stage.show();
 
                         // --------Closing the deposit window--------
@@ -62,13 +73,22 @@ public class LoginController {
                         e.printStackTrace();
                     }
                 } else {
-                    System.out.println("Chybné uživatelské jméno nebo heslo");
+                    labelLoginFail.setVisible(true);
+                    PauseTransition visiblePause = new PauseTransition(Duration.seconds(3));
+                    visiblePause.setOnFinished(
+                            event -> labelLoginFail.setVisible(false)
+                    );
+                    visiblePause.play();
                 }
         } catch (Exception e) {
             System.out.println(e);
         }
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        buttonLogin.setDefaultButton(true);
+    }
 }
 
 

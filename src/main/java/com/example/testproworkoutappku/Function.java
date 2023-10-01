@@ -9,33 +9,6 @@ import java.util.List;
 
 public class Function extends ExerciseDatabase {
 
-
-//    public ObservableList exerciseSelection(String nameOfExercise, String stringCalorie, String stringDifficulty) {
-//        ObservableList<Exercise> list = FXCollections.observableArrayList();
-//        // List<Exercise> result = new ArrayList<>();
-//        for (Exercise exercise : getExercisesFromDatabase()) {
-//            if (!nameOfExercise.equals("") && !exercise.getNameOfExercise().equals(nameOfExercise)) {
-//                continue;
-//            }
-//            if (!stringCalorie.equals("")){
-//                double calorie = Double.parseDouble(stringCalorie);
-//                if (exercise.getCalorieOfExercise() != (calorie)) {
-//                    continue;
-//                }
-//            }
-//            if (!stringDifficulty.equals("")) {
-//                int difficulty = Integer.parseInt(stringDifficulty);
-//                if (exercise.getDifficultyOfExercise() != (difficulty)) {
-//                    continue;
-//                }
-//            }
-//
-//            list.add(exercise);
-//        }
-//        return list;
-//        }
-
-
     public List<Exercise> exerciseSelection(String nameOfExercise, String stringCalorie, String stringDifficulty) {
        // ObservableList<Exercise> list = FXCollections.observableArrayList();
         int size = 0;
@@ -69,6 +42,34 @@ public class Function extends ExerciseDatabase {
     }
 
 }
+
+
+
+
+//    public ObservableList exerciseSelection(String nameOfExercise, String stringCalorie, String stringDifficulty) {
+//        ObservableList<Exercise> list = FXCollections.observableArrayList();
+//        // List<Exercise> result = new ArrayList<>();
+//        for (Exercise exercise : getExercisesFromDatabase()) {
+//            if (!nameOfExercise.equals("") && !exercise.getNameOfExercise().equals(nameOfExercise)) {
+//                continue;
+//            }
+//            if (!stringCalorie.equals("")){
+//                double calorie = Double.parseDouble(stringCalorie);
+//                if (exercise.getCalorieOfExercise() != (calorie)) {
+//                    continue;
+//                }
+//            }
+//            if (!stringDifficulty.equals("")) {
+//                int difficulty = Integer.parseInt(stringDifficulty);
+//                if (exercise.getDifficultyOfExercise() != (difficulty)) {
+//                    continue;
+//                }
+//            }
+//
+//            list.add(exercise);
+//        }
+//        return list;
+//        }
 
 
 

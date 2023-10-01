@@ -50,7 +50,7 @@
             </Button>
          </children>
       </VBox>
-      <ToolBar fx:id="toolBar" layoutY="2.0" nodeOrientation="RIGHT_TO_LEFT" onMouseDragged="#onMouseDragged" onMousePressed="#onMousePressed" prefHeight="25.0" prefWidth="1000.0" stylesheets="@../css/style.css" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+      <ToolBar fx:id="toolBar" layoutY="2.0" maxWidth="1.7976931348623157E308" nodeOrientation="RIGHT_TO_LEFT" onMouseDragged="#onMouseDragged" onMousePressed="#onMousePressed" prefHeight="25.0" prefWidth="1000.0" stylesheets="@../css/style.css" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
          <items>
             <Circle fill="#ff2b1f" onMouseClicked="#onExit" opacity="0.68" radius="6.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" styleClass="Circle" />
             <Circle fill="#ffa421" onMouseClicked="#fullScreen" opacity="0.68" radius="6.0" stroke="BLACK" strokeType="INSIDE" style="-fx-cursor: hand;" styleClass="Circle" />
@@ -64,9 +64,9 @@
            <TableColumn fx:id="tableDifficulty" prefWidth="102.0" text="Difficulty" />
         </columns>
       </TableView>
-      <TextField fx:id="textFieldDifficulty" alignment="CENTER" layoutX="451.0" layoutY="68.0" onKeyPressed="#onKeyTypedTFDifficulty" prefHeight="17.0" prefWidth="87.0" visible="false" />
-      <TextField fx:id="textFieldExercise" layoutX="451.0" layoutY="93.0" onKeyPressed="#onKeyTypedTFExercise" prefHeight="17.0" prefWidth="87.0" visible="false" />
-      <TextField fx:id="textFieldCalories" layoutX="451.0" layoutY="117.0" onKeyPressed="#onKeyTypedTFCalories" prefHeight="17.0" prefWidth="87.0" visible="false" />
+      <TextField fx:id="textFieldDifficulty" alignment="CENTER" layoutX="439.0" layoutY="115.0" onKeyPressed="#onKeyTypedTFDifficulty" prefHeight="17.0" prefWidth="87.0" visible="false" />
+      <TextField fx:id="textFieldExercise" layoutX="439.0" layoutY="65.0" onKeyPressed="#onKeyTypedTFExercise" prefHeight="17.0" prefWidth="87.0" visible="false" />
+      <TextField fx:id="textFieldCalories" layoutX="439.0" layoutY="90.0" onKeyPressed="#onKeyTypedTFCalories" prefHeight="17.0" prefWidth="87.0" visible="false" />
       <CheckBox fx:id="checkBoxDifficulty" layoutX="333.0" layoutY="119.0" mnemonicParsing="false" onAction="#onCheckBoxDifficulty" prefHeight="17.0" prefWidth="87.0" text="Difficulty" />
       <CheckBox fx:id="checkBoxCalories" layoutX="333.0" layoutY="94.0" mnemonicParsing="false" onAction="#onCheckBoxCalories" prefHeight="17.0" prefWidth="87.0" text="Calories" />
       <CheckBox fx:id="checkBoxExercise" layoutX="333.0" layoutY="69.0" mnemonicParsing="false" onAction="#onCheckBoxExercise" prefHeight="17.0" prefWidth="87.0" text="Exercise" />

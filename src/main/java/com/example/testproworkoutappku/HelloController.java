@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 
 import javafx.scene.input.MouseEvent;
@@ -16,7 +17,6 @@ import java.util.ResourceBundle;
 
 public class HelloController implements Initializable {
 
-    int loadData;
     int i = 0;
     private Stage stage;
 
@@ -129,7 +129,9 @@ public class HelloController implements Initializable {
 
     @FXML
     void fullScreenButton(){
+        stage.setFullScreenExitHint("");
         stage.setFullScreen(true);
+       // toolBar.setVisible(false);
     }
 
 
@@ -141,6 +143,5 @@ public class HelloController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         func.loadExercisesData();
-
     }
 }
