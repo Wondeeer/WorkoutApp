@@ -2,8 +2,6 @@ package com.example.testproworkoutappku;
 
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
-import javafx.scene.input.KeyEvent;
-
 
 public class LimitedTextField {
 

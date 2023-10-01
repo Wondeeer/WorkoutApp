@@ -2,13 +2,16 @@ package com.example.testproworkoutappku;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class LoginController {
 
@@ -25,35 +28,47 @@ public class LoginController {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        if ("a".equals(username) && "a".equals(password)) {
-            System.out.println("Přihlášení úspěšné");
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection(
+                    //-------------Here is database name, root is username and password-------------
+                    "jdbc:mysql://*************", "******", "*****************");
 
-            // Načtení nové scény
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(WorkOutApplication.class.getResource("/FXML/jea.fxml"));
-                Scene scene = new Scene(fxmlLoader.load());
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("select * from users");
+            while (rs.next())
+                if (rs.getString(2).equals(username) && rs.getString(3).equals(password)) {
+                    System.out.println("Přihlášení úspěšné");
 
-                HelloController controller = fxmlLoader.getController();
-                controller.setStage(stage);
+                    // ----------------------Load new Scene-------------------------
+                    try {
+                        FXMLLoader fxmlLoader = new FXMLLoader(WorkOutApplication.class.getResource("/FXML/PrimaryWindow.fxml"));
+                        Scene scene = new Scene(fxmlLoader.load());
+
+                        HelloController controller = fxmlLoader.getController();
+                        controller.setStage(stage);
 
 
-                Stage stage = new Stage();
-                stage.setTitle("Domů");
-                stage.setScene(scene);
-                stage.show();
+                        Stage stage = new Stage();
+                        stage.setTitle("Domů");
+                        stage.setScene(scene);
+                        stage.show();
 
-                // Zavření přihlašovacího okna
-                Stage loginStage = (Stage) usernameField.getScene().getWindow();
-                loginStage.close();
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            System.out.println("Chybné uživatelské jméno nebo heslo");
-            // Zde můžete zobrazit chybovou zprávu uživateli
+                        // --------Closing the deposit window--------
+                        Stage loginStage = (Stage) usernameField.getScene().getWindow();
+                        loginStage.close();
+                        con.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    System.out.println("Chybné uživatelské jméno nebo heslo");
+                }
+        } catch (Exception e) {
+            System.out.println(e);
         }
     }
+
 }
 
 

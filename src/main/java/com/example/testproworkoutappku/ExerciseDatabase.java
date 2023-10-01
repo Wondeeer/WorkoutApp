@@ -33,6 +33,7 @@ public abstract class  ExerciseDatabase {
     }
 
 
+    //---------------------------------Function for load data from JSON----------------------------------
     public void loadExercisesData(){
        Gson gson = new Gson();
         //List<Exercise> exercisee = new ArrayList<>();
