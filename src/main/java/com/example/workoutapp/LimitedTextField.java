@@ -1,4 +1,4 @@
-package com.example.testproworkoutappku;
+package com.example.workoutapp;
 
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;

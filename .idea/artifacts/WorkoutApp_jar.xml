@@ -1,8 +1,8 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="testProWorkoutAppku:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/testProWorkoutAppku_jar</output-path>
+  <artifact type="jar" name="WorkoutApp:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/WorkoutApp_jar</output-path>
     <root id="archive" name="testProWorkoutAppku.jar">
-      <element id="module-output" name="testProWorkoutAppku" />
+      <element id="module-output" name="WorkoutApp" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/dlsc/formsfx/formsfx-core/11.5.0/formsfx-core-11.5.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/17.0.2/javafx-graphics-17.0.2-win.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/eu/hansolo/toolbox/17.0.22/toolbox-17.0.22.jar" path-in-jar="/" />

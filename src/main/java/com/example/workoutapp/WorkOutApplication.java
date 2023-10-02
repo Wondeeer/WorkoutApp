@@ -1,4 +1,4 @@
-package com.example.testproworkoutappku;
+package com.example.workoutapp;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
 import java.io.IOException;
 import java.util.Objects;
 
@@ -23,7 +22,6 @@ public class WorkOutApplication extends Application {
         stage.setScene(scene);
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
-
     }
 
     public static void main(String[] args) {

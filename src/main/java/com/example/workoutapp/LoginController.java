@@ -1,4 +1,5 @@
-package com.example.testproworkoutappku;
+package com.example.workoutapp;
+
 
 import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
@@ -13,7 +14,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
-
 
 import java.io.IOException;
 import java.net.URL;
@@ -32,7 +32,8 @@ public class LoginController implements Initializable {
     private Label labelLoginFail;
     @FXML
     private Button buttonLogin;
-
+    @FXML
+    private Label labelDatabaseFail;
     @FXML
     private PasswordField passwordField;
 
@@ -46,7 +47,7 @@ public class LoginController implements Initializable {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(
                     //-------------Here is database name, root is username and password-------------
-                    "jdbc:mysql://38.242.247.11:3306/fitness", "fitness", "XND3jjJshZMhfeKr");
+                    "**********************************************************");
 
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("select * from users");
@@ -57,8 +58,8 @@ public class LoginController implements Initializable {
                     // ----------------------Load new Scene-------------------------
                     try {
                         FXMLLoader fxmlLoader = new FXMLLoader(WorkOutApplication.class.getResource("/FXML/PrimaryWindow.fxml"));
-                        Parent root1 = (Parent) fxmlLoader.load();
-                        HelloController controller = fxmlLoader.getController();
+                        Parent root1 = fxmlLoader.load();
+                        PrimaryController controller = fxmlLoader.getController();
                         Stage stage = new Stage();
                         controller.setStage(stage);
                         stage.initStyle(StageStyle.TRANSPARENT);
@@ -81,7 +82,12 @@ public class LoginController implements Initializable {
                     visiblePause.play();
                 }
         } catch (Exception e) {
-            System.out.println(e);
+            labelDatabaseFail.setVisible(true);
+            PauseTransition visiblePause = new PauseTransition(Duration.seconds(3));
+            visiblePause.setOnFinished(
+                    event -> labelDatabaseFail.setVisible(false)
+            );
+            visiblePause.play();
         }
     }
 
@@ -90,6 +96,7 @@ public class LoginController implements Initializable {
         buttonLogin.setDefaultButton(true);
     }
 }
+
 
 
 

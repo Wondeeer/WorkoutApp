@@ -1,4 +1,4 @@
-package com.example.testproworkoutappku;
+package com.example.workoutapp;
 
 public class Exercise {
 

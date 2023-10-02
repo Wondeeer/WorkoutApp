@@ -1,4 +1,4 @@
-package com.example.testproworkoutappku;
+package com.example.workoutapp;
 
 public enum Days {
     PONDELI, UTERY, STREDA, CTVRTEK, PATEK, SOBOTA, NEDELE;

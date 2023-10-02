@@ -1,48 +1,47 @@
-package com.example.testproworkoutappku;
+package com.example.workoutapp;
 
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.KeyCombination;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import javafx.scene.input.MouseEvent;
-
+import java.math.RoundingMode;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 
-public class HelloController implements Initializable {
+public class PrimaryController implements Initializable {
 
     int i = 0;
     private Stage stage;
-
     private double xOffset = 0;
     private double yOffset = 0;
-
-    private final Function func = new Function();
+    LimitedTextField limitedTextField;
+    Function func = new Function();
 
     @FXML
     private ToolBar toolBar;
     @FXML
     private CheckBox checkBoxDifficulty, checkBoxExercise,checkBoxCalories;
     @FXML
-    private TextField textFieldDifficulty, textFieldExercise, textFieldCalories;
-
+    private TextField textFieldDifficulty, textFieldExercise, textFieldCalories, textfieldWeightBmi, textfieldHeightBmi;
     @FXML
     private TableColumn<Exercise,String> tableExercise;
     @FXML
     private TableColumn<Exercise,Double> tableCalories;
-
     @FXML
     private TableColumn<Exercise,Integer> tableDifficulty;
     @FXML
     private TableView<Exercise> tableView;
-    private LimitedTextField limitedTextField;
-
+    @FXML
+    private AnchorPane anchorpaneBmi;
+    @FXML
+    private Label labelResultBmi, labelBmiCase;
 
 
 
@@ -140,8 +139,27 @@ public class HelloController implements Initializable {
        stage.close();
     }
 
+    @FXML
+    void onFunction(){
+
+    }
+
+    @FXML
+    void menuitemBmi(){
+        anchorpaneBmi.setVisible(true);
+    }
+
+    @FXML
+    void onActionButtonBmi(){
+        DecimalFormat df = new DecimalFormat("#.##");
+        df.setRoundingMode(RoundingMode.CEILING);
+        labelResultBmi.setText("Vaše BMI je: " + df.format(func.BMI(Double.parseDouble(textfieldWeightBmi.getText()), Double.parseDouble(textfieldHeightBmi.getText()))));
+    }
+
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        func.loadExercisesData();
+        func.setLabel(labelBmiCase);
     }
 }

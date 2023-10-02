@@ -1,4 +1,4 @@
-module com.example.testproworkoutappku {
+module com.example.workoutapp {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -12,6 +12,6 @@ module com.example.testproworkoutappku {
     requires com.almasb.fxgl.all;
     requires java.desktop;
     requires com.google.gson;
-    opens com.example.testproworkoutappku to javafx.fxml;
-    exports com.example.testproworkoutappku;
+    exports com.example.workoutapp;
+    opens com.example.workoutapp to javafx.fxml;
 }

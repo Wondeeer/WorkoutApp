@@ -8,9 +8,31 @@
 
 .menuButton:hover{
     -fx-cursor:hand;
+    -fx-underline:true;
 }
 
+
+
+.split-menu-button .arrow-button {
+    -fx-background-color: linear-gradient(to right, #020024, #47252f);
 }
+
+.split-menu-button .arrow-button:hover {
+    -fx-cursor:hand;
+        -fx-underline:true;
+}
+
+
+
+
+.split-menu-button .label{
+    -fx-background-color: linear-gradient(to right, #020024, #477851);
+}
+
+.split-menu-button{
+    -fx-background-color: linear-gradient(to right, #020024, #77252f);
+}
+
 .searchButton {
     -fx-background-color:
         #a6b5c9,
@@ -32,6 +54,14 @@
 
 .VBox{
     -fx-background-color: linear-gradient(to right, #020024, #77252f);
+}
+
+.menuBar{
+  /*  -fx-text-fill: white;
+        -fx-background-color: linear-gradient(to right, #020024, #77252f);
+        -fx-border-radius: 20;
+        -fx-background-radius: 20;
+        -fx-padding: 5;     */
 }
 
 /*.close{
