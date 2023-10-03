@@ -92,7 +92,7 @@
       <CheckBox fx:id="checkBoxCalories" layoutX="333.0" layoutY="94.0" mnemonicParsing="false" onAction="#onCheckBoxCalories" prefHeight="17.0" prefWidth="87.0" text="Calories" />
       <CheckBox fx:id="checkBoxExercise" layoutX="333.0" layoutY="69.0" mnemonicParsing="false" onAction="#onCheckBoxExercise" prefHeight="17.0" prefWidth="87.0" text="Exercise" />
       <Button layoutX="333.0" layoutY="28.0" mnemonicParsing="false" onAction="#onSearchButton" prefHeight="26.0" prefWidth="106.0" styleClass="searchButton" stylesheets="@../css/style.css" text="Search" />
-      <AnchorPane fx:id="anchorpaneBmi" layoutX="367.0" layoutY="473.0" prefHeight="122.0" prefWidth="309.0">
+      <AnchorPane fx:id="anchorpaneBmi" layoutX="367.0" layoutY="473.0" prefHeight="122.0" prefWidth="309.0" visible="false">
          <children>
             <TextField fx:id="textfieldHeightBmi" layoutX="24.0" layoutY="14.0" prefHeight="25.0" prefWidth="87.0" promptText="Výška v cm" />
             <TextField fx:id="textfieldWeightBmi" layoutX="24.0" layoutY="49.0" prefHeight="25.0" prefWidth="87.0" promptText="Váha" />
@@ -110,6 +110,6 @@
       </AnchorPane>
       <DatePicker layoutX="611.0" layoutY="31.0" prefHeight="12.0" prefWidth="233.0" />
       <Polygon fill="#29252f" layoutX="500.0" layoutY="352.0" points="350.0, 101.0, 350.0, 285.0, 500.0, 68.0" stroke="BLACK" strokeType="INSIDE" />
-      <PointLight color="CHARTREUSE" layoutX="844.0" layoutY="59.0"/>
+      <PointLight color="CHARTREUSE" layoutX="844.0" layoutY="59.0" />
    </children>
 </AnchorPane>
